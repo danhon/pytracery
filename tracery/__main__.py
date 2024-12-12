@@ -5,7 +5,7 @@ Output an example line from a JSON Tracery grammar.
 """
 from __future__ import print_function, unicode_literals
 import argparse
-import json
+import pyjson5
 
 import tracery
 from tracery.modifiers import base_english
@@ -22,7 +22,7 @@ if __name__ == "__main__":
     args = parser.parse_args()
 
     with open(args.json) as data_file:
-        rules = json.load(data_file)
+        rules = pyjson5.decode_io(data_file)
 
     grammar = tracery.Grammar(rules)
     grammar.add_modifiers(base_english)
