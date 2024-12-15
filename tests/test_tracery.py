@@ -17,7 +17,7 @@ import tracery
 from tracery.modifiers import base_english
 
 
-with open('test_grammar.json') as data_file:
+with open('tests/test_grammar.json') as data_file:
     """We'll open the test grammar as a file now, instead of having it inline"""
     test_grammar = pyjson5.decode_io(data_file)
 
